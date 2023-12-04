@@ -17,7 +17,7 @@ Public Class ProjectContext
             ConnectionString,
             Function(op)
                 op.MigrationsAssembly(Assembly.GetExecutingAssembly().FullName)
-                op.MigrationsHistoryTable("Migrations")
+                'op.MigrationsHistoryTable("Migrations")
 
             End Function
         )
