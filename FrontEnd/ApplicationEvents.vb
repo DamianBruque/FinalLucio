@@ -27,6 +27,9 @@ Namespace My
     ' End Sub
 
     Partial Friend Class MyApplication
-
+        Private adminLogin As New AdminLogin
+        Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
+            adminLogin.Show()
+        End Sub
     End Class
 End Namespace
