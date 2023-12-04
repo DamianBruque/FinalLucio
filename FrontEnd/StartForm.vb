@@ -90,7 +90,10 @@ Public Class StartForm
 
 #End Region
 
-
+    Private user As User
+    Public Sub SetUser(user As User)
+        Me.user = user
+    End Sub
     Private Sub StartForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         WindowState = FormWindowState.Maximized
         Dim dbContext As DbContext = New ProjectContext
@@ -104,7 +107,16 @@ Public Class StartForm
         Dim login As New LoginForm
         login.MdiParent = Me
         login.StartPosition = FormStartPosition.CenterScreen
+        login.SetStartForm(Me)
+        MenuStrip1.Enabled = False
         login.Show()
     End Sub
 
+    Private Sub RegistrarseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarseToolStripMenuItem.Click
+        Dim register As New RegisterForm
+        register.MdiParent = Me
+        register.StartPosition = FormStartPosition.CenterScreen
+        register.SetStartForm(Me)
+        register.Show()
+    End Sub
 End Class

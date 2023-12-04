@@ -1,6 +1,6 @@
 Imports Models
 
-Public Class LoginForm
+Public Class RegisterForm
 
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
     ' (Consulte https://go.microsoft.com/fwlink/?LinkId=35339).  
@@ -14,23 +14,18 @@ Public Class LoginForm
         startForm = form
     End Sub
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
+        Dim user As User
         ' validamos campos
 
-        ' consultamos a base de datos
+        ' enviamos a la base de datos
 
-        ' en caso correcto pedimos el usuario
-
-        ' enviamos el usuario al principal
-        'startForm.SetUser(New User())
-        Me.Close()
+        ' enviamos el usuario en caso de crearlo exitosamente
+        startForm.SetUser(user)
+        Close()
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
-        startForm.MenuStrip1.Enabled = True
-        Me.Close()
+        Close()
     End Sub
 
-    Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class

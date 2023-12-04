@@ -493,49 +493,49 @@ Partial Class StartForm
         ' IniciarSesiónToolStripMenuItem
         ' 
         IniciarSesiónToolStripMenuItem.Name = "IniciarSesiónToolStripMenuItem"
-        IniciarSesiónToolStripMenuItem.Size = New Size(150, 22)
+        IniciarSesiónToolStripMenuItem.Size = New Size(180, 22)
         IniciarSesiónToolStripMenuItem.Text = "Iniciar sesión"
         ' 
         ' RegistrarseToolStripMenuItem
         ' 
         RegistrarseToolStripMenuItem.Name = "RegistrarseToolStripMenuItem"
-        RegistrarseToolStripMenuItem.Size = New Size(150, 22)
+        RegistrarseToolStripMenuItem.Size = New Size(180, 22)
         RegistrarseToolStripMenuItem.Text = "Registrarse"
         ' 
         ' DesconectarseToolStripMenuItem
         ' 
         DesconectarseToolStripMenuItem.Enabled = False
         DesconectarseToolStripMenuItem.Name = "DesconectarseToolStripMenuItem"
-        DesconectarseToolStripMenuItem.Size = New Size(150, 22)
+        DesconectarseToolStripMenuItem.Size = New Size(180, 22)
         DesconectarseToolStripMenuItem.Text = "Desconectarse"
         ' 
         ' PerfilToolStripMenuItem
         ' 
         PerfilToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {DatosPersonalesToolStripMenuItem, SeguridadToolStripMenuItem})
-        PerfilToolStripMenuItem.Enabled = False
         PerfilToolStripMenuItem.Name = "PerfilToolStripMenuItem"
         PerfilToolStripMenuItem.Size = New Size(46, 20)
         PerfilToolStripMenuItem.Text = "Perfil"
+        PerfilToolStripMenuItem.Visible = False
         ' 
         ' DatosPersonalesToolStripMenuItem
         ' 
         DatosPersonalesToolStripMenuItem.Name = "DatosPersonalesToolStripMenuItem"
-        DatosPersonalesToolStripMenuItem.Size = New Size(163, 22)
+        DatosPersonalesToolStripMenuItem.Size = New Size(180, 22)
         DatosPersonalesToolStripMenuItem.Text = "Datos personales"
         ' 
         ' SeguridadToolStripMenuItem
         ' 
         SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem"
-        SeguridadToolStripMenuItem.Size = New Size(163, 22)
+        SeguridadToolStripMenuItem.Size = New Size(180, 22)
         SeguridadToolStripMenuItem.Text = "Seguridad"
         ' 
         ' RedToolStripMenuItem
         ' 
         RedToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {PublicacionesToolStripMenuItem, AmigosToolStripMenuItem})
-        RedToolStripMenuItem.Enabled = False
         RedToolStripMenuItem.Name = "RedToolStripMenuItem"
         RedToolStripMenuItem.Size = New Size(39, 20)
         RedToolStripMenuItem.Text = "Red"
+        RedToolStripMenuItem.Visible = False
         ' 
         ' PublicacionesToolStripMenuItem
         ' 

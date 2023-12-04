@@ -31,98 +31,99 @@ Partial Class LoginForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
-        Me.LogoPictureBox = New System.Windows.Forms.PictureBox
-        Me.UsernameLabel = New System.Windows.Forms.Label
-        Me.PasswordLabel = New System.Windows.Forms.Label
-        Me.UsernameTextBox = New System.Windows.Forms.TextBox
-        Me.PasswordTextBox = New System.Windows.Forms.TextBox
-        Me.OK = New System.Windows.Forms.Button
-        Me.Cancel = New System.Windows.Forms.Button
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.SuspendLayout()
-        '
-        'LogoPictureBox
-        '
-        Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(0, 0)
-        Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(165, 193)
-        Me.LogoPictureBox.TabIndex = 0
-        Me.LogoPictureBox.TabStop = False
-        '
-        'UsernameLabel
-        '
-        Me.UsernameLabel.Location = New System.Drawing.Point(172, 24)
-        Me.UsernameLabel.Name = "UsernameLabel"
-        Me.UsernameLabel.Size = New System.Drawing.Size(220, 23)
-        Me.UsernameLabel.TabIndex = 0
-        Me.UsernameLabel.Text = "&Nombre de usuario"
-        Me.UsernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'PasswordLabel
-        '
-        Me.PasswordLabel.Location = New System.Drawing.Point(172, 81)
-        Me.PasswordLabel.Name = "PasswordLabel"
-        Me.PasswordLabel.Size = New System.Drawing.Size(220, 23)
-        Me.PasswordLabel.TabIndex = 2
-        Me.PasswordLabel.Text = "&Contraseña"
-        Me.PasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'UsernameTextBox
-        '
-        Me.UsernameTextBox.Location = New System.Drawing.Point(174, 44)
-        Me.UsernameTextBox.Name = "UsernameTextBox"
-        Me.UsernameTextBox.Size = New System.Drawing.Size(220, 20)
-        Me.UsernameTextBox.TabIndex = 1
-        '
-        'PasswordTextBox
-        '
-        Me.PasswordTextBox.Location = New System.Drawing.Point(174, 101)
-        Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.PasswordChar = Microsoft.VisualBasic.ChrW(42)
-        Me.PasswordTextBox.Size = New System.Drawing.Size(220, 20)
-        Me.PasswordTextBox.TabIndex = 3
-        '
-        'Aceptar
-        '
-        Me.OK.Location = New System.Drawing.Point(197, 161)
-        Me.OK.Name = "OK"
-        Me.OK.Size = New System.Drawing.Size(94, 23)
-        Me.OK.TabIndex = 4
-        Me.OK.Text = "&Aceptar"
-        '
-        'Cancelar
-        '
-        Me.Cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.Cancel.Location = New System.Drawing.Point(300, 161)
-        Me.Cancel.Name = "Cancel"
-        Me.Cancel.Size = New System.Drawing.Size(94, 23)
-        Me.Cancel.TabIndex = 5
-        Me.Cancel.Text = "&Cancelar"
-        '
-        'LoginForm
-        '
-        Me.AcceptButton = Me.OK
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.CancelButton = Me.Cancel
-        Me.ClientSize = New System.Drawing.Size(401, 192)
-        Me.Controls.Add(Me.Cancel)
-        Me.Controls.Add(Me.OK)
-        Me.Controls.Add(Me.PasswordTextBox)
-        Me.Controls.Add(Me.UsernameTextBox)
-        Me.Controls.Add(Me.PasswordLabel)
-        Me.Controls.Add(Me.UsernameLabel)
-        Me.Controls.Add(Me.LogoPictureBox)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
-        Me.Name = "LoginForm"
-        Me.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "LoginForm"
-        CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        LogoPictureBox = New PictureBox()
+        UsernameLabel = New Label()
+        PasswordLabel = New Label()
+        UsernameTextBox = New TextBox()
+        PasswordTextBox = New TextBox()
+        OK = New Button()
+        Cancel = New Button()
+        CType(LogoPictureBox, ComponentModel.ISupportInitialize).BeginInit()
+        SuspendLayout()
+        ' 
+        ' LogoPictureBox
+        ' 
+        LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), Image)
+        LogoPictureBox.Location = New Point(0, 0)
+        LogoPictureBox.Name = "LogoPictureBox"
+        LogoPictureBox.Size = New Size(165, 193)
+        LogoPictureBox.TabIndex = 0
+        LogoPictureBox.TabStop = False
+        ' 
+        ' UsernameLabel
+        ' 
+        UsernameLabel.Location = New Point(172, 24)
+        UsernameLabel.Name = "UsernameLabel"
+        UsernameLabel.Size = New Size(220, 23)
+        UsernameLabel.TabIndex = 0
+        UsernameLabel.Text = "&Nombre de usuario"
+        UsernameLabel.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' PasswordLabel
+        ' 
+        PasswordLabel.Location = New Point(172, 81)
+        PasswordLabel.Name = "PasswordLabel"
+        PasswordLabel.Size = New Size(220, 23)
+        PasswordLabel.TabIndex = 2
+        PasswordLabel.Text = "&Contraseña"
+        PasswordLabel.TextAlign = ContentAlignment.MiddleLeft
+        ' 
+        ' UsernameTextBox
+        ' 
+        UsernameTextBox.Location = New Point(174, 44)
+        UsernameTextBox.Name = "UsernameTextBox"
+        UsernameTextBox.Size = New Size(220, 23)
+        UsernameTextBox.TabIndex = 1
+        ' 
+        ' PasswordTextBox
+        ' 
+        PasswordTextBox.Location = New Point(174, 101)
+        PasswordTextBox.Name = "PasswordTextBox"
+        PasswordTextBox.PasswordChar = "*"c
+        PasswordTextBox.Size = New Size(220, 23)
+        PasswordTextBox.TabIndex = 3
+        ' 
+        ' OK
+        ' 
+        OK.Location = New Point(197, 161)
+        OK.Name = "OK"
+        OK.Size = New Size(94, 23)
+        OK.TabIndex = 4
+        OK.Text = "&Aceptar"
+        ' 
+        ' Cancel
+        ' 
+        Cancel.DialogResult = DialogResult.Cancel
+        Cancel.Location = New Point(300, 161)
+        Cancel.Name = "Cancel"
+        Cancel.Size = New Size(94, 23)
+        Cancel.TabIndex = 5
+        Cancel.Text = "&Cancelar"
+        ' 
+        ' LoginForm
+        ' 
+        AcceptButton = OK
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        CancelButton = Cancel
+        ClientSize = New Size(401, 192)
+        Controls.Add(Cancel)
+        Controls.Add(OK)
+        Controls.Add(PasswordTextBox)
+        Controls.Add(UsernameTextBox)
+        Controls.Add(PasswordLabel)
+        Controls.Add(UsernameLabel)
+        Controls.Add(LogoPictureBox)
+        FormBorderStyle = FormBorderStyle.FixedDialog
+        MaximizeBox = False
+        MinimizeBox = False
+        Name = "LoginForm"
+        SizeGripStyle = SizeGripStyle.Hide
+        StartPosition = FormStartPosition.CenterParent
+        Text = "LoginForm"
+        CType(LogoPictureBox, ComponentModel.ISupportInitialize).EndInit()
+        ResumeLayout(False)
+        PerformLayout()
 
     End Sub
 
