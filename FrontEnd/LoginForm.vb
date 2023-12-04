@@ -26,11 +26,15 @@ Public Class LoginForm
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
-        startForm.MenuStrip1.Enabled = True
         Me.Close()
     End Sub
 
     Private Sub LoginForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    End Sub
+
+    Private Sub LoginForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+
+        startForm.MenuStrip1.Enabled = True
     End Sub
 End Class

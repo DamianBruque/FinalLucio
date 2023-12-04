@@ -25,7 +25,12 @@ Public Class RegisterForm
     End Sub
 
     Private Sub Cancel_Click(sender As Object, e As EventArgs) Handles Cancel.Click
+        startForm.MenuStrip1.Enabled = True
         Close()
     End Sub
 
+    Private Sub RegisterForm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+
+        startForm.MenuStrip1.Enabled = True
+    End Sub
 End Class

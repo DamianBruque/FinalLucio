@@ -117,6 +117,7 @@ Public Class StartForm
         register.MdiParent = Me
         register.StartPosition = FormStartPosition.CenterScreen
         register.SetStartForm(Me)
+        MenuStrip1.Enabled = False
         register.Show()
     End Sub
 End Class
