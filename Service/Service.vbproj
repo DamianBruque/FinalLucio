@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.vbproj" />
-    <ProjectReference Include="..\Persistence2\Persistence2.vbproj" />
+    <ProjectReference Include="..\Persistence\Persistence.vbproj" />
   </ItemGroup>
 
 </Project>
