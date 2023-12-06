@@ -96,7 +96,7 @@ Public Class StartForm
     End Sub
     Private Sub StartForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         WindowState = FormWindowState.Maximized
-        Dim dbContext As DbContext = New ProjectContext
+        Dim unused = ProjectContext.Instance
     End Sub
 
     Private Sub AmigosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AmigosToolStripMenuItem.Click

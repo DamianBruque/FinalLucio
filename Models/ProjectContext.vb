@@ -5,8 +5,19 @@ Public Class ProjectContext
     Inherits DbContext
 
     Private ConnectionString As String
+    Private Shared _instance As ProjectContext
 
-    Public Sub New()
+    Public Shared ReadOnly Property Instance As ProjectContext
+        Get
+            If _instance Is Nothing Then
+                _instance = New ProjectContext
+            End If
+            Return _instance
+        End Get
+    End Property
+
+
+    Private Sub New()
         ConnectionString = Environment.GetEnvironmentVariable("ConnectionString")
         Database.EnsureCreated() ' Crea la base de datos si no existe
         SaveChanges()

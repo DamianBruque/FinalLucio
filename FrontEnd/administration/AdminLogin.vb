@@ -1,3 +1,5 @@
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+
 Public Class AdminLogin
 
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
@@ -20,8 +22,12 @@ Public Class AdminLogin
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        PasswordTextBox.PasswordChar = IIf(PasswordTextBox.PasswordChar = "", "#", "")
-        MsgBox("Password: " & PasswordTextBox.PasswordChar)
-        Button1.BackgroundImage = IIf(PasswordTextBox.PasswordChar = "", My.Resources.tile001, My.Resources.tile000)
+        PasswordTextBox.PasswordChar = IIf(PasswordTextBox.PasswordChar <> "#", "#", "")
+        'MsgBox("Password: " & PasswordTextBox.PasswordChar)
+        Button1.BackgroundImage = IIf(PasswordTextBox.PasswordChar <> "#", My.Resources.tile001, My.Resources.tile000)
+    End Sub
+
+    Private Sub Button1_MouseMove(sender As Object, e As MouseEventArgs) Handles Button1.MouseMove
+        ToolTip1.SetToolTip(Button1, IIf(PasswordTextBox.PasswordChar <> "#", "Ocultar contraseña", "Mostrar contraseña"))
     End Sub
 End Class

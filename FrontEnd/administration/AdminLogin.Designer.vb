@@ -30,6 +30,7 @@ Partial Class AdminLogin
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AdminLogin))
         LogoPictureBox = New PictureBox()
         UsernameLabel = New Label()
@@ -39,6 +40,7 @@ Partial Class AdminLogin
         OK = New Button()
         Cancel = New Button()
         Button1 = New Button()
+        ToolTip1 = New ToolTip(components)
         CType(LogoPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -140,5 +142,6 @@ Partial Class AdminLogin
     End Sub
 
     Friend WithEvents Button1 As Button
+    Friend WithEvents ToolTip1 As ToolTip
 
 End Class

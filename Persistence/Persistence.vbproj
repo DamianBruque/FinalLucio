@@ -1,8 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <RootNamespace>Persistence2</RootNamespace>
+    <RootNamespace>Persistence</RootNamespace>
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.vbproj" />
+  </ItemGroup>
 
 </Project>
