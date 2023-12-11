@@ -5,12 +5,12 @@
 Este proyecto es una base de aplicacion de una red social. Cuenta con una interfaz de usuario desarrollada en Windows Forms y una base de datos en SQL Server.
 También cuenta con una interfaz de administrador para poder gestionar los usuarios y las publicaciones.
 
-## Propuesta de proyecto
+## Propuesta de funcionamiento
 
 #### Perspectiva del usuario
 
 - [X] Registro de usuario
-- [ ] Login de usuario
+- [X] Login de usuario
 - [ ] Realizar publicaciones
 - [ ] Cambiar foto de perfil
 - [ ] Cambiar e-mail y contraseña
@@ -42,3 +42,4 @@ También cuenta con una interfaz de administrador para poder gestionar los usuari
 #### Image store
 
 - [ ] Almacenar imagenes de perfil y publicaciones en Firebase Storage
+

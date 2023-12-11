@@ -12,7 +12,6 @@ Public Class PersonService
 
     Public Function Register(person As Person) As Person
         Dim returnPerson As Person
-
         Try
             returnPerson = database.Register(person)
         Catch ex As Exception
@@ -21,4 +20,13 @@ Public Class PersonService
         Return returnPerson
     End Function
 
+    Public Function GetByUserID(userID As Integer) As Person
+        Dim returnPerson As Person
+        Try
+            returnPerson = database.GetByUserId(userID)
+        Catch ex As Exception
+            Throw New Exception("Error al obtener perfil:\n" & ex.Message)
+        End Try
+        Return returnPerson
+    End Function
 End Class

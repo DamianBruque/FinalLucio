@@ -30,6 +30,7 @@ Partial Class LoginForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        components = New ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginForm))
         LogoPictureBox = New PictureBox()
         UsernameLabel = New Label()
@@ -38,6 +39,8 @@ Partial Class LoginForm
         PasswordTextBox = New TextBox()
         OK = New Button()
         Cancel = New Button()
+        Button2 = New Button()
+        ToolTip1 = New ToolTip(components)
         CType(LogoPictureBox, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -56,7 +59,7 @@ Partial Class LoginForm
         UsernameLabel.Name = "UsernameLabel"
         UsernameLabel.Size = New Size(220, 23)
         UsernameLabel.TabIndex = 0
-        UsernameLabel.Text = "Nombre de usuario"
+        UsernameLabel.Text = "E-mail"
         UsernameLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' PasswordLabel
@@ -79,8 +82,8 @@ Partial Class LoginForm
         ' 
         PasswordTextBox.Location = New Point(174, 101)
         PasswordTextBox.Name = "PasswordTextBox"
-        PasswordTextBox.PasswordChar = "*"c
-        PasswordTextBox.Size = New Size(220, 23)
+        PasswordTextBox.PasswordChar = "#"c
+        PasswordTextBox.Size = New Size(191, 23)
         PasswordTextBox.TabIndex = 3
         ' 
         ' OK
@@ -100,6 +103,16 @@ Partial Class LoginForm
         Cancel.TabIndex = 5
         Cancel.Text = "Cancelar"
         ' 
+        ' Button2
+        ' 
+        Button2.BackgroundImage = My.Resources.Resources.tile000
+        Button2.BackgroundImageLayout = ImageLayout.Stretch
+        Button2.Location = New Point(371, 100)
+        Button2.Name = "Button2"
+        Button2.Size = New Size(23, 23)
+        Button2.TabIndex = 45
+        Button2.UseVisualStyleBackColor = True
+        ' 
         ' LoginForm
         ' 
         AcceptButton = OK
@@ -107,6 +120,7 @@ Partial Class LoginForm
         AutoScaleMode = AutoScaleMode.Font
         CancelButton = Cancel
         ClientSize = New Size(401, 192)
+        Controls.Add(Button2)
         Controls.Add(Cancel)
         Controls.Add(OK)
         Controls.Add(PasswordTextBox)
@@ -126,5 +140,8 @@ Partial Class LoginForm
         PerformLayout()
 
     End Sub
+
+    Friend WithEvents Button2 As Button
+    Friend WithEvents ToolTip1 As ToolTip
 
 End Class
