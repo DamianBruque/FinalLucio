@@ -1,7 +1,10 @@
 
 Imports Models
+Imports Service
 
 Public Class RegisterForm
+    Private personService As New PersonService
+    Private userService As New UserService
 
     ' TODO: inserte el código para realizar autenticación personalizada usando el nombre de usuario y la contraseña proporcionada 
     ' (Consulte https://go.microsoft.com/fwlink/?LinkId=35339).  
@@ -18,11 +21,32 @@ Public Class RegisterForm
     Private Sub OK_Click(sender As Object, e As EventArgs) Handles OK.Click
         'Dim user As User
         ' validamos campos
+        Dim user As New User()
+        Dim person As New Person()
+        If (ValidName() And ValidEmail() And ValidPassword()) Then
+            person.FullName = NameTextBox.Text
+            user.Email = EmailTextBox1.Text
+            user.Password = PasswordTextBox1.Text
+            user.State = True
+            person.AvatarImage = imagePath
+            person.User = user
+            person.Adress = AdressTextBox.Text
+            person.BirthDate = MonthCalendar1.SelectionStart
+            person.Phone = PhoneTextBox.Text
+            person.State = True
 
-        ' enviamos a la base de datos
+            ' enviamos a la base de datos
 
-        ' enviamos el usuario en caso de crearlo exitosamente
-        'startForm.SetUser(user)
+            Try
+                user = userService.Register(user)
+                person.UserID = user.UserId
+                person = personService.Register(person)
+                person.User = user
+                startForm.SetUser(person)
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
         Close()
     End Sub
 
@@ -71,5 +95,58 @@ Public Class RegisterForm
     End Sub
     Private Sub ActiveToolTip(sender As Object, passBox As TextBox)
         ToolTip1.SetToolTip(sender, IIf(passBox.PasswordChar <> "#", "Ocultar contraseña", "Mostrar contraseña"))
+    End Sub
+
+
+    Private Sub NameTextBox_TextChanged(sender As Object, e As EventArgs) Handles NameTextBox.TextChanged
+        If (ValidName()) Then
+            ErrorProviderName.Clear()
+        Else
+            ErrorProviderName.SetError(NameTextBox, "Campo obligatorio")
+        End If
+    End Sub
+
+    Private Function ValidName() As Boolean
+        Return NameTextBox.Text <> "" And NameTextBox.Text.Length > 3 And NameTextBox.Text.Length < 50 And New Text.RegularExpressions.Regex("^[a-zA-Z ]*$").IsMatch(NameTextBox.Text)
+    End Function
+
+    Private Sub EmailTextBox1_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox1.TextChanged
+        If (ValidEmail()) Then
+            ErrorProviderEmail1.Clear()
+        Else
+            ErrorProviderEmail1.SetError(EmailTextBox1, "Campo obligatorio")
+        End If
+    End Sub
+
+    Private Function ValidEmail() As Boolean
+        Return EmailTextBox1.Text <> "" And New Text.RegularExpressions.Regex("^[\w._%-]+@[\w.-]+\.[a-zA-Z]{2,4}$").IsMatch(EmailTextBox1.Text) And EmailTextBox1.Text = EmailTextBox2.Text
+    End Function
+
+    Private Sub EmailTextBox2_TextChanged(sender As Object, e As EventArgs) Handles EmailTextBox2.TextChanged
+        If (EmailTextBox1.Text = EmailTextBox2.Text) Then
+            ErrorProviderEmail2.Clear()
+        Else
+            ToolTip1.SetToolTip(EmailTextBox2, "Los correos no coinciden")
+        End If
+    End Sub
+
+    Private Sub PasswordTextBox1_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox1.TextChanged
+        If (ValidPassword()) Then
+            ErrorProviderPass1.Clear()
+        Else
+            ErrorProviderPass1.SetError(PasswordTextBox1, "Campo obligatorio")
+        End If
+    End Sub
+
+    Private Function ValidPassword() As Boolean
+        Return PasswordTextBox1.Text <> "" And New Text.RegularExpressions.Regex("^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,15}$").IsMatch(PasswordTextBox1.Text) And PasswordTextBox1.Text = PasswordTextBox2.Text
+    End Function
+
+    Private Sub PasswordTextBox2_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox2.TextChanged
+        If (PasswordTextBox1.Text = PasswordTextBox2.Text) Then
+            ErrorProviderPass2.Clear()
+        Else
+            ToolTip1.SetToolTip(PasswordTextBox2, "Las contraseñas no coinciden")
+        End If
     End Sub
 End Class

@@ -90,9 +90,9 @@ Public Class StartForm
 
 #End Region
 
-    Private user As User
-    Public Sub SetUser(user As User)
-        Me.user = user
+    Private person As Person
+    Public Sub SetUser(person As Person)
+        Me.person = person
     End Sub
     Private Sub StartForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         WindowState = FormWindowState.Maximized

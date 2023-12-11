@@ -56,7 +56,7 @@ Partial Class LoginForm
         UsernameLabel.Name = "UsernameLabel"
         UsernameLabel.Size = New Size(220, 23)
         UsernameLabel.TabIndex = 0
-        UsernameLabel.Text = "&Nombre de usuario"
+        UsernameLabel.Text = "Nombre de usuario"
         UsernameLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' PasswordLabel
@@ -65,7 +65,7 @@ Partial Class LoginForm
         PasswordLabel.Name = "PasswordLabel"
         PasswordLabel.Size = New Size(220, 23)
         PasswordLabel.TabIndex = 2
-        PasswordLabel.Text = "&Contraseña"
+        PasswordLabel.Text = "Contraseña"
         PasswordLabel.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' UsernameTextBox
@@ -89,7 +89,7 @@ Partial Class LoginForm
         OK.Name = "OK"
         OK.Size = New Size(94, 23)
         OK.TabIndex = 4
-        OK.Text = "&Aceptar"
+        OK.Text = "Aceptar"
         ' 
         ' Cancel
         ' 
@@ -98,7 +98,7 @@ Partial Class LoginForm
         Cancel.Name = "Cancel"
         Cancel.Size = New Size(94, 23)
         Cancel.TabIndex = 5
-        Cancel.Text = "&Cancelar"
+        Cancel.Text = "Cancelar"
         ' 
         ' LoginForm
         ' 
