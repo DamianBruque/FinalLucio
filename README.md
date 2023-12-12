@@ -10,6 +10,7 @@ También cuenta con una interfaz de administrador para poder gestionar los usuari
 #### Perspectiva del usuario
 
 - [X] Registro de usuario
+- [ ] Encriptado de contraseña
 - [X] Login de usuario
 - [ ] Realizar publicaciones
 - [ ] Cambiar foto de perfil
